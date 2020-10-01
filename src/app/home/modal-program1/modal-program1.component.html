@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calculo de Interes Simple</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()"><ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="options">
+      <ion-list-header>
+        <ion-label>Opciones</ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Calcular Interes</ion-label>
+        <ion-radio slot="start" value="interes"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Calcular Tiempo de Interes</ion-label>
+        <ion-radio slot="start" value="tiempo"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Calcular Taza de Interes</ion-label>
+        <ion-radio slot="start" value="taza"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Calcular Capital Inicial</ion-label>
+        <ion-radio slot="start" value="capital"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+
+  <!-- platilla de interes  -->
+    <div *ngIf="options" class="content1">
+      
+        <h3>Inserte los Datos</h3>
+      
+        <form [formGroup]="myForm" class="example-form">
+          <mat-form-field *ngIf="options.valueOf() == 'interes' || options.valueOf() == 'taza' || options.valueOf() == 'tiempo'" class="example-full-width">
+            <mat-label>Capital</mat-label>
+            <input [(ngModel)]="capital" matInput type="number" formControlName="capital">
+          </mat-form-field>
+
+          <mat-form-field *ngIf="options.valueOf() == 'capital' || options.valueOf() == 'taza' || options.valueOf() == 'tiempo'" class="example-full-width">
+            <mat-label>Interes</mat-label>
+            <input matInput type="number" formControlName="interes">
+          </mat-form-field>
+        
+          <mat-form-field *ngIf="options.valueOf() == 'interes' || options.valueOf() == 'tiempo' || options.valueOf() == 'capital'" class="example-full-width">
+            <mat-label>Tasa de Interes</mat-label>
+            <input [(ngModel)]="interes"  matInput type="number" formControlName="tazaInteres">
+          </mat-form-field>
+      
+          <mat-form-field *ngIf="options.valueOf() == 'interes' || options.valueOf() == 'taza' || options.valueOf() == 'capital'" class="example-full-width">
+            <mat-label>Tiempo</mat-label>
+            <input [(ngModel)]="tiempo" matInput type="number" formControlName="tiempo">
+          </mat-form-field>
+        </form>
+
+        
+        <div class="calTotal">
+          <label *ngIf="options.valueOf() == 'capital'">Capital: {{resulCapital}}</label>
+          <label *ngIf="options.valueOf() == 'tiempo'">Tiempo: {{resulTiempo}}</label>
+          <label *ngIf="options.valueOf() == 'taza'">Taza de Interes: {{resulTaza}}</label>
+      </div>
+  
+        <ion-grid *ngIf="options.valueOf() == 'interes'">
+          <ion-row>
+            <ion-col size="4">
+              Datos:
+              <div class="col1">
+                <div>
+                  <ion-label>Capital:<p>{{capital}}</p></ion-label>
+                </div>
+                <ion-label>Taza de Interes:<p>{{interes}}</p></ion-label>
+                <ion-label>Tiempo:<p>{{tiempo}}</p></ion-label>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              Total de Interes:
+              <div class="col">
+                <div class="baja">
+                  <ion-label class="interes">Interes: <p>{{capital * interes * tiempo}}</p></ion-label>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col  size="4">
+              Total a pagar:
+              <div class="colTotal">
+                <div class="baja2">
+                  <label class="total">
+                    {{resultInteres}}
+                  </label>
+                </div>
+                </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+    </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button *ngIf="options.valueOf() == 'interes'" mat-raised-button color="warn" (click)="calcular()">Calcular</button>
+    <button *ngIf="options.valueOf() == 'capital'" mat-raised-button color="warn" (click)="calcularCapital()">Calcular</button>
+    <button *ngIf="options.valueOf() == 'taza'" mat-raised-button color="warn" (click)="calcularTazaInteres()">Calcular</button>
+    <button *ngIf="options.valueOf() == 'tiempo'" mat-raised-button color="warn" (click)="calcularTiempo()">Calcular</button>
+  </ion-toolbar>
+</ion-footer>
