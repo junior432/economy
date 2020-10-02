@@ -67,9 +67,9 @@
 
         
         <div class="calTotal">
-          <label *ngIf="options.valueOf() == 'capital'">Capital: {{resulCapital}}</label>
-          <label *ngIf="options.valueOf() == 'tiempo'">Tiempo: {{resulTiempo}}</label>
-          <label *ngIf="options.valueOf() == 'taza'">Taza de Interes: {{resulTaza}}</label>
+          <label *ngIf="options.valueOf() == 'capital'">Capital: {{resulCapital|number:'1.2-2'}}</label>
+          <label *ngIf="options.valueOf() == 'tiempo'">Tiempo: {{resulTiempo|number:'1.2-2'}}</label>
+          <label *ngIf="options.valueOf() == 'taza'">Taza de Interes: {{resulTaza|number:'1.2-2'}}</label>
       </div>
   
         <ion-grid *ngIf="options.valueOf() == 'interes'">
@@ -78,10 +78,10 @@
               Datos:
               <div class="col1">
                 <div>
-                  <ion-label>Capital:<p>{{capital}}</p></ion-label>
+                  <ion-label>Capital:<p>{{capital|number:'1.2-2'}}</p></ion-label>
                 </div>
-                <ion-label>Taza de Interes:<p>{{interes}}</p></ion-label>
-                <ion-label>Tiempo:<p>{{tiempo}}</p></ion-label>
+                <ion-label>Taza de Interes:<p>{{interes|number:'1.2-2'}}</p></ion-label>
+                <ion-label>Tiempo:<p>{{tiempo|number:'1.2-2'}}</p></ion-label>
               </div>
             </ion-col>
             <ion-col size="4">
@@ -97,7 +97,7 @@
               <div class="colTotal">
                 <div class="baja2">
                   <label class="total">
-                    {{resultInteres}}
+                    {{resultInteres|number:'1.2-2'}}
                   </label>
                 </div>
                 </div>

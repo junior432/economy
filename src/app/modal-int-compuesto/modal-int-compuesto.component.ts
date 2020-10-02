@@ -60,7 +60,8 @@ export class ModalIntCompuestoComponent implements OnInit {
   calcularTaza(){
     const v = this.myForm.value;
 
-    this.i = Math.pow(v.tiempo, v.valorFinal/v.capital) -1;
+    this.i = Math.pow(v.valorFinal/v.capital, 1/v.tiempo) -1;
+    this.i = this.i * 100;
   }
 
 }
