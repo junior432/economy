@@ -1,17 +1,56 @@
 ion-header ion-toolbar {
-    --background: #d1ebff !important;
-  }
+  --background: #d1ebff !important;
+}
 
-  ion-footer ion-toolbar {
-    text-align: end !important;
-  }
-  
-  button {
-    margin-right: 5px;
-  }
-  
-  h3 {
-    padding-left: 30px;
-    color: #f44336;
-  }
-  
+ion-footer ion-toolbar {
+  text-align: end !important;
+}
+
+button {
+  margin-right: 5px;
+}
+
+h3 {
+  padding-left: 30px;
+  color: #f44336;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.example-full-width {
+  width: 90%;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.total {
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 7px;
+}
+
+ion-radio {
+  --color-checked: #f44336;
+}
+
+.calTotal {
+  text-align: center !important;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #f44336;
+  font-size: 20px;
+}
+
+input {
+  text-align: end;
+  color: #f44336;
+  font-weight: bold;
+}
