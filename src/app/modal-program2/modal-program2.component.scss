@@ -1,0 +1,67 @@
+ion-header ion-toolbar {
+  --background: #a4aefd !important;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.example-full-width {
+  width: 90%;
+}
+
+.content {
+  margin-top: 40px;
+}
+
+.title {
+  padding-left: 30px;
+  color: #f44336;
+}
+
+ion-footer ion-toolbar {
+  text-align: end !important;
+}
+
+button {
+  margin-right: 5px;
+}
+
+input {
+  text-align: end;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.datos {
+  height: 200px;
+  background-color: #a4aefd;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.result {
+  padding: 5px;
+  height: 200px;
+  background-color: #f443362d;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+
+.calculate {
+  padding: 30px;
+}
+
+h3 {
+  color: white;
+}
+
+// ion-label{
+//     color: white;
+// }

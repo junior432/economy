@@ -47,13 +47,18 @@
             <ion-card>
               <ion-card-header class="color2">
                 <ion-card-subtitle>Programa 2</ion-card-subtitle>
-                <ion-card-title>Ingenieria Economica</ion-card-title>
+                <ion-card-title>Costos Fijos y Variables</ion-card-title>
               </ion-card-header>
             
               <ion-card-content>
-                <div class="center">
-                  Proximamente!!
-                </div>
+                <ion-list lines="none">
+                  <ion-item (click)="presentModalPuntoEquilibrio()" button>
+                    <ion-icon slot="start" name="calculator-outline"></ion-icon>
+                    <ion-label>
+                       Punto de Equilibrio
+                    </ion-label>
+                  </ion-item>
+                 </ion-list>
               </ion-card-content>
             </ion-card>
           </ion-col>

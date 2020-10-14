@@ -1,3 +1,4 @@
+import { ModalProgram2Component } from './../modal-program2/modal-program2.component';
 import { ModalIntCompuestoComponent } from './../modal-int-compuesto/modal-int-compuesto.component';
 import { Component, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
@@ -35,5 +36,12 @@ export class HomePage {
     return await modal.present();
   }
 
+  async presentModalPuntoEquilibrio() {
+    const modal = await this.modalController.create({
+      component: ModalProgram2Component,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
 
 }

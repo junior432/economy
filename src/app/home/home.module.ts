@@ -1,3 +1,4 @@
+import { ModalProgram2Component } from './../modal-program2/modal-program2.component';
 import { ModalIntCompuestoComponent } from './../modal-int-compuesto/modal-int-compuesto.component';
 import { ModalProgram1Component } from './modal-program1/modal-program1.component';
 import { NgModule } from '@angular/core';
@@ -24,6 +25,6 @@ import {MatButtonModule} from '@angular/material/button';
     MatButtonModule,
     ReactiveFormsModule
   ],
-  declarations: [HomePage, ModalProgram1Component, ModalIntCompuestoComponent]
+  declarations: [HomePage, ModalProgram1Component, ModalIntCompuestoComponent, ModalProgram2Component]
 })
 export class HomePageModule {}

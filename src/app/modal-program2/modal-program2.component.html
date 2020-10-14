@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calculo de Punto de Equilibrio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()"><ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="content">
+      
+    <h3 class="title">Inserte los Datos</h3>
+
+    <form [formGroup]="myForm" class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Costos Fijos</mat-label>
+        <input matInput [(ngModel)]="cf" type="number" formControlName="costosFijos">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Precio de Venta Unitario</mat-label>
+        <input matInput [(ngModel)]="pu" type="number" formControlName="precioUnitario">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Costos Variables Unitarios</mat-label>
+        <input matInput [(ngModel)]="cu" type="number" formControlName="costosUnitarios">
+      </mat-form-field>
+    </form>
+  </div>
+
+
+  <div class="calculate">
+    <ion-row>
+      <ion-col size="6">
+           <div class="datos">
+             <h3>Datos:</h3>
+            <div>
+              <ion-label>1- Costos Fijos: <p>{{cf|number:'1.2-2'}}</p></ion-label>
+            </div>
+            <div>
+              <ion-label>2- Precio Unitario: <p>{{pu|number:'1.2-2'}}</p></ion-label>
+            </div>
+            <div>
+              <ion-label>3- Costos Unitarios: <p>{{cu|number:'1.2-2'}}</p></ion-label>
+            </div>
+         </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="result">
+          <h3>Punto de Equilibrio:</h3>
+            <label class="res">{{puntoEquilibrio|number:'1.2-2'}}</label>
+        </div>
+     </ion-col>
+    </ion-row>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button mat-raised-button color="warn" (click)="calcular()">Calcular</button>
+  </ion-toolbar>
+</ion-footer>
